@@ -12,6 +12,7 @@ import './App.css';
 function App() {
   const { currentUser, loading } = useAuth();
   const [darkMode, setDarkMode] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     document.body.className = darkMode ? 'dark-mode' : '';
@@ -33,15 +34,15 @@ function App() {
   return (
     <NotesProvider>
       <div className="app">
-        <SearchBar />
-        <Sidebar />
+        <SearchBar onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
+        <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
         <NoteList />
         <NoteEditor />
         <button
-          style={{ position: 'fixed', bottom: 10, right: 10 }}
+          className="dark-mode-toggle"
           onClick={() => setDarkMode(!darkMode)}
         >
-          {darkMode ? 'Light Mode' : 'Dark Mode'}
+          {darkMode ? '☀️ Light' : '🌙 Dark'}
         </button>
       </div>
     </NotesProvider>

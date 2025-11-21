@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNotes } from '../context/NotesContext';
 
-const SearchBar = () => {
+const SearchBar = ({ onMenuClick }) => {
   const { searchQuery, setSearchQuery } = useNotes();
 
   useEffect(() => {
@@ -17,6 +17,9 @@ const SearchBar = () => {
 
   return (
     <div className="search-bar">
+      <button className="menu-button" onClick={onMenuClick}>
+        ☰
+      </button>
       <input
         className="search-input"
         type="text"

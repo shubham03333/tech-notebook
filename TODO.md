@@ -1,6 +1,8 @@
-# TODO: Implement Default Category for New Notes
+# Restyle Search Box, Save Button, and Dark Mode Button
 
-## Steps to Complete
-- [ ] Modify `loadCategories` in `src/context/NotesContext.jsx` to ensure "Default" is always the first category in the list.
-- [ ] Update the fallback categories to include "Default" as the first option.
-- [ ] Test that new notes without a selected category are saved to "Default".
+## Tasks
+- [ ] Update search box width in src/App.css (.search-input) to make it shorter (e.g., 60% width)
+- [ ] Restyle save button in src/App.css (.editor-controls button) to be smaller and more subtle
+- [ ] Add styles for dark mode button in src/App.css (.dark-mode-toggle)
+- [ ] Update src/App.jsx to add className and icon to dark mode button
+- [ ] Test the app for responsiveness and visual changes
